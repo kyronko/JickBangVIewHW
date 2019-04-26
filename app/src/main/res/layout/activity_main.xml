@@ -9,6 +9,13 @@
         android:orientation="vertical"
         tools:context=".MainActivity"
         android:background="#D3D3D3">
+        <Button
+            android:id="@+id/AddBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="임시방 추가"
+            android:textSize="25sp"
+            android:background="#FFBB"/>
 
         <ListView
             android:id="@+id/HouseList"

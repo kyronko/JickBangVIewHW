@@ -39,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        act.AddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            HouseList.add(new HouseData("150/100",7,"서울종로구","더조은컴퓨터학원 앞"));
+            mHouseAdapter.notifyDataSetChanged();
+
+            act.HouseList.smoothScrollToPosition(HouseList.size()-1);
+            }
+        });
     }
     void fullhouse(){
         HouseList.add(new HouseData("100/13",2,"경상북도 구미시 송정동","번개시장"));
