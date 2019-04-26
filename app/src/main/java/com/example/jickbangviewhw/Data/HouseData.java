@@ -1,8 +1,9 @@
 package com.example.jickbangviewhw.Data;
 
 
+import java.io.Serializable;
 
-public class HouseData {
+public class HouseData implements Serializable {
     public String HouseMoneyTxt ;
    public int HouseFloorTxt;
     public String HouseAddressTxt;

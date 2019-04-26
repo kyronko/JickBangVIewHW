@@ -1,8 +1,11 @@
 package com.example.jickbangviewhw;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.example.jickbangviewhw.Adapter.HouseAdapter;
 import com.example.jickbangviewhw.Data.HouseData;
@@ -24,6 +27,17 @@ public class MainActivity extends AppCompatActivity {
         fullhouse();
         mHouseAdapter = new HouseAdapter(MainActivity.this,HouseList);
         act.HouseList.setAdapter(mHouseAdapter);
+
+        act.HouseList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HouseData clickedHouseData =HouseList.get(position);
+                Intent intent = new Intent(MainActivity.this,HouseDetail.class);
+                intent.putExtra("집정보",clickedHouseData);
+                startActivity(intent);
+
+            }
+        });
 
     }
     void fullhouse(){
